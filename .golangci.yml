@@ -1,0 +1,31 @@
+run:
+  build-tags:
+    - integration
+
+linters-settings:
+  goimports:
+    # Separate internal packages from external
+    local-prefixes: github.com/mesquita/zapctx
+
+linters:
+  # Enable extra linters besides the default ones
+  enable:
+    - goimports
+    - godot
+    - goconst
+    - gofumpt
+    - govet
+    - stylecheck
+    - unconvert
+    - unparam
+    - nlreturn
+    - misspell
+    - whitespace
+    - bodyclose
+
+issues:
+  exclude-rules:
+    - path: /
+      linters:
+        - stylecheck
+      text: "ST1003:"
